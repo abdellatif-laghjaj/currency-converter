@@ -9,7 +9,6 @@ const convert_btn = document.querySelector('.convert-btn');
 
 
 //api url
-// const api_url = 'https://open.er-api.com/v6/latest/';
 const API_KEY = '3237605e72ae640493e2c0bd';
 const api_url = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/`;
 
@@ -25,44 +24,28 @@ convert_btn.addEventListener('click', () => {
     if (amount == '' || from_value == '' || to_value == '') {
         alert('Please enter an amount');
     } else {
-        displayConversion(from_value, to_value, amount);
+        calculateConversion(from_value, to_value, amount);
     }
 });
 
 
-//fucntion to get the currency rates
-function getCurrencyRates(from, to) {
-    return fetch(`${api_url}${from}`)
-        .then(response => response.json())
-        .then(data => {
-            return data.conversion_rates[to];
-        });
-}
-
-console.log(getCurrencyRates('USD', 'INR'));
-
-//calculate the conversion
+//claculate the conversion
 function calculateConversion(from, to, amount) {
-    return getCurrencyRates(from, to)
-        .then(rate => {
-            return amount * rate;
+    const url = `${api_url}${from}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            const rate = data.conversion_rates[to];
+            const result = amount * rate;
+            output_value.innerHTML = result;
+            output_currency.innerHTML = to;
+            input_value.innerHTML = amount;
+            input_currency.innerHTML = from;
         });
 }
-
-console.log(calculateConversion('USD', 'MAD', 100));
-
-
-//result of the conversion
-function displayConversion(from, to, amount) {
-    input_currency.innerHTML = amount;
-    output_currency.innerHTML = calculateConversion(from, to, amount);
-    from_currency.value = from_value;
-    to_currency.value = to_value;
-}
-
 
 //get the currency rates
 for ([key, value] of Object.entries(CURRENCY_LIST)) {
-    from_currency.innerHTML += `<option value="${value}">${key}</option>`;
-    to_currency.innerHTML += `<option value="${value}">${key}</option>`;
+    from_currency.innerHTML += `<option value="${key}">${key}</option>`;
+    to_currency.innerHTML += `<option value="${key}">${key}</option>`;
 }
