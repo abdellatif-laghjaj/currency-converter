@@ -6,6 +6,7 @@ const output_value = document.querySelector('.output-value');
 const input_currency = document.querySelector('.input-currency');
 const output_currency = document.querySelector('.output-currency');
 const convert_btn = document.querySelector('.convert-btn');
+const alert_message = document.querySelector('.alert-message');
 
 
 //api url
@@ -24,7 +25,7 @@ convert_btn.addEventListener('click', () => {
     to_value = to_currency.value;
     amount = amount_input.value;
     if (amount == '' || from_value == '' || to_value == '') {
-        alert('Please enter an amount');
+        showAlertMessage('Please fill all the fields', 'error');
     } else {
         calculateConversion(from_value, to_value, amount);
     }
@@ -61,4 +62,16 @@ function setDefaultValues() {
     input_currency.innerHTML = 'USD';
     output_value.innerHTML = calculateConversion(from_currency.value, to_currency.value, amount_input.value);
     output_currency.innerHTML = 'EUR';
+}
+
+
+//show alert message
+function showAlertMessage(message, type) {
+    alert_message.innerHTML = `
+    <div class="alert alert-${type} shadow-lg">
+        <div>
+            <i class="bx bx-check-circle bx-sm"></i>
+            <span>${message}</span>
+        </div>
+    </div>`;
 }
