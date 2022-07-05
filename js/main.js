@@ -74,4 +74,8 @@ function showAlertMessage(message, type) {
             <span>${message}</span>
         </div>
     </div>`;
+
+    setTimeout(() => {
+        alert_message.innerHTML = '';
+    }, 3000);
 }
