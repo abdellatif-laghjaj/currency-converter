@@ -1,0 +1,16 @@
+.author-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.theme-switcher {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}

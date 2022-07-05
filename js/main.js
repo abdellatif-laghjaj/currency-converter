@@ -36,7 +36,6 @@ convert_btn.addEventListener('click', () => {
     }
 });
 
-
 //claculate the conversion
 function calculateConversion(from, to, amount) {
     const url = `${api_url}${from}`;
