@@ -16,37 +16,36 @@
 <body>
     <div class="container">
         <header>
-            <h1>Currency Converter</h1>
+            <h1 class="text-2xl font-bold m-4 text-center">Currency Converter</h1>
             <input type="text" placeholder="Type here" class="input input-bordered input-info w-full max-w-xs" />
             <div class="currecny-menus">
-                <p>From</p>
+                <p class="my-3 text-xl">From</p>
                 <select class="select select-info w-full max-w-xs from-dropdow">
-                    <option disabled selected>Select a currency</option>
-                    <option>USD</option>
+                    <option disabled>Select a currency</option>
+                    <option selected>USD</option>
+                    <option>MAD</option>
                     <option>EUR</option>
-                    <option>GBP</option>
                 </select>
 
-                <p>To</p>
+                <p class="my-3 text-xl">To</p>
                 <select class="select select-info w-full max-w-xs to-dropdown">
-                    <option disabled selected>Select a currency</option>
+                    <option disabled>Select a currency</option>
                     <option>USD</option>
+                    <option selected>MAD</option>
                     <option>EUR</option>
-                    <option>GBP</option>
                 </select>
 
                 <div class="output">
                     <div class="alert alert-success shadow-lg mt-4">
                         <div>
-                            <i class="bx bx-check-circle bx-sm"></i>
                             <span>
                                 <p class="text-xl font-bold input-value">1.00</p>
                                 <p class="text-sm input-currency">USD</p>
                             </span>
-                            <i class='bx bxs-right-arrow bx-sm mx-2'></i>
+                            <i class='bx bxs-right-arrow bx-sm mx-6'></i>
                             <span>
-                                <p class="text-xl font-bold output-value">1.00</p>
-                                <p class="text-sm output-currency">USD</p>
+                                <p class="text-xl font-bold output-value">9.78</p>
+                                <p class="text-sm output-currency">MAD</p>
                             </span>
                         </div>
                     </div>
