@@ -10,6 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
+    <!-- Favicon -->
+    <link rel="icon" href="res/favicon.svg">
+
     <title>Currency Converter | By Abdellatif Laghjaj</title>
 </head>
 
@@ -26,20 +29,14 @@
                 <p class="my-3 text-xl">From</p>
                 <select class="select select-primary w-full max-w-xs from-dropdown">
                     <option disabled>Select a currency</option>
-                    <option selected>USD</option>
-                    <option>MAD</option>
-                    <option>EUR</option>
                 </select>
 
                 <p class="my-3 text-xl">To</p>
                 <select class="select select-primary w-full max-w-xs to-dropdown">
                     <option disabled>Select a currency</option>
-                    <option>USD</option>
-                    <option selected>MAD</option>
-                    <option>EUR</option>
                 </select>
 
-                <button class="btn btn-primary w-full mt-4">Convert</button>
+                <button class="btn btn-primary w-full mt-4 convert-btn">Convert</button>
 
                 <div class="output mb-1">
                     <div class="alert alert-success shadow-lg mt-4 flex justify-center">
@@ -59,6 +56,9 @@
             </div>
         </div>
     </div>
-</body>
 
+    <!-- Scripts -->
+    <script src="js/countries_list.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>

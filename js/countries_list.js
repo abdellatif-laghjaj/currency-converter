@@ -1,4 +1,4 @@
-let countries_list = {
+let CURRENCY_LIST = {
     "AED" : "AE",
     "AFN" : "AF",
     "XCD" : "AG",
