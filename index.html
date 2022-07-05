@@ -5,9 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.18.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+
     <title>Currency Converter | By Abdellatif Laghjaj</title>
 </head>
 <body>
-    
+    <div class="container">
+        <header>
+            <h1>Currency Converter</h1>
+            <input type="text" placeholder="Type here" class="input input-bordered input-info w-full max-w-xs" />
+            <div class="currecny-menus">
+                <p>From</p>
+                <select class="select select-info w-full max-w-xs from-dropdow">
+                    <option disabled selected>Select a currency</option>
+                    <option>USD</option>
+                    <option>EUR</option>
+                    <option>GBP</option>
+                </select>
+
+                <p>To</p>
+                <select class="select select-info w-full max-w-xs to-dropdown">
+                    <option disabled selected>Select a currency</option>
+                    <option>USD</option>
+                    <option>EUR</option>
+                    <option>GBP</option>
+                </select>
+            </div>
+        </header>
+    </div>
 </body>
 </html>
