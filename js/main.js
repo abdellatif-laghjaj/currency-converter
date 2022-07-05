@@ -12,6 +12,8 @@ const convert_btn = document.querySelector('.convert-btn');
 const API_KEY = '3237605e72ae640493e2c0bd';
 const api_url = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/`;
 
+window.addEventListener('load', setDefaultValues);
+
 //values
 var from_value = '';
 var to_value = '';
@@ -48,4 +50,15 @@ function calculateConversion(from, to, amount) {
 for ([key, value] of Object.entries(CURRENCY_LIST)) {
     from_currency.innerHTML += `<option value="${key}">${key}</option>`;
     to_currency.innerHTML += `<option value="${key}">${key}</option>`;
+}
+
+//set default values
+function setDefaultValues() {
+    from_currency.value = 'USD';
+    to_currency.value = 'MAD';
+    amount_input.value = '1';
+    input_value.innerHTML = '1';
+    input_currency.innerHTML = 'USD';
+    output_value.innerHTML = calculateConversion(from_currency.value, to_currency.value, amount_input.value);
+    output_currency.innerHTML = 'EUR';
 }
