@@ -25,9 +25,14 @@ convert_btn.addEventListener('click', () => {
     to_value = to_currency.value;
     amount = amount_input.value;
     if (amount == '' || from_value == '' || to_value == '') {
-        showAlertMessage('Please fill all the fields', 'error');
-    } else {
+        showAlertMessage('Please fill all the fields', 'error', 3000);
+    }else if (amount == 0) {
+        showAlertMessage('Please enter a valid amount', 'error', 3000);
+    }else if(from_value == to_value){
+        showAlertMessage('Please select different currencies', 'error', 3000);
+    }else {
         calculateConversion(from_value, to_value, amount);
+        showAlertMessage('Conversion Successful', 'success', 3000);
     }
 });
 
@@ -66,16 +71,16 @@ function setDefaultValues() {
 
 
 //show alert message
-function showAlertMessage(message, type) {
+function showAlertMessage(message, type, time) {
     alert_message.innerHTML = `
     <div class="alert alert-${type} shadow-lg">
         <div>
-            <i class="bx bx-check-circle bx-sm"></i>
+            <i class="bx ${type == 'success' ? 'bx-check-circle' : 'bx-x-circle'} bx-sm"></i>
             <span>${message}</span>
         </div>
     </div>`;
 
     setTimeout(() => {
         alert_message.innerHTML = '';
-    }, 3000);
+    }, time);
 }
