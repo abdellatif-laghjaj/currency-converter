@@ -13,3 +13,14 @@ body{
     align-items: center;
     height: 100vh;
 }
+
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 15px;
+}

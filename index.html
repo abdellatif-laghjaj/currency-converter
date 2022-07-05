@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.18.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Currency Converter | By Abdellatif Laghjaj</title>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -31,6 +34,23 @@
                     <option>EUR</option>
                     <option>GBP</option>
                 </select>
+
+                <div class="output">
+                    <div class="alert alert-success shadow-lg mt-4">
+                        <div>
+                            <i class="bx bx-check-circle bx-sm"></i>
+                            <span>
+                                <p class="text-xl font-bold input-value">1.00</p>
+                                <p class="text-sm input-currency">USD</p>
+                            </span>
+                            <i class='bx bxs-right-arrow bx-sm mx-2'></i>
+                            <span>
+                                <p class="text-xl font-bold output-value">1.00</p>
+                                <p class="text-sm output-currency">USD</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
     </div>
